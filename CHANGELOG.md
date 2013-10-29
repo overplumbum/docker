@@ -1,5 +1,38 @@
 # Changelog
 
+## 0.6.5 (2013-10-29)
++ Runtime: Host Integration
++ Runtime: Container Links and Container Naming
+* Documentation: Fixes the flags for nc in example
+* Testing: Removes \n from debugf calls
+- Client: Only pass stdin to hijack when needed
+* Testing: Remove warnings and prevent some mount issues
+* Documentation: Linkify @github references in the infrastructure README.md
+* Client: Use less reflection in command-line method invocation
+- Runtime: Ignore ErrClosedPipe for stdin in Container.Attach
+- Client: Change logic for tty resize to avoid warning in tests
+- Client: Monitor the tty after starting the container
+- Hack: Fix install.sh with $sh_c to get sudo/su for modprobe
+- Client: Remove useless os.Exit() after log.Fatalf
+* Hack: Update all the mkimage scripts to use --numeric-owner as a tar argument
+* Hack: Update hack/release.sh process to automatically invoke hack/make.sh and bail on building/testing issues
++ Hack: Add initial init scripts library and better/safer Ubuntu packaging that works for Debian, too
+- Runtime: Fix wrong untag while docker rmi
+- Runtime: Remove unused field kernelVersion
+* Hack: Add -p option to invoke debootstrap with http_proxy
+* Client: Improve docker inspect
+- Builder: Fix race condition in docker build with verbose + cleanup hostIntegration debug
+- Registry: Fix content-type for PushImageJSONIndex
+* Runtime: Fixes issues with mounting subdirectories of /mnt in container.
+* Runtime: Check return value of syscall.Chdir when changing working directory
+- Contrib: Set commentstring in Vim syntax plugin
+- Client: Place 'top' subcommand's help in proper order.
+* Hack: Renamed and refactored mkimage-debian to mkimage-debootstrap to more clearly reflect its true function
+* Builder: Clean up build warnings. Remove redundant files.
+- Testing: Cleanup the test suite
+* Hack: Make mkimage-arch.sh a little more clear
+* Documentation: Try a different presentation of infrastructure documentation.
+
 ## 0.6.4 (2013-10-16)
 - Runtime: Add cleanup of container when Start() fails
 - Testing: Catch errClosing error when TCP and UDP proxies are terminated
