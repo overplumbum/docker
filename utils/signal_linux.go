@@ -45,3 +45,8 @@ func CatchAll(sigc chan os.Signal) {
 		syscall.SIGXFSZ,
 	)
 }
+
+func Stop(sigc chan os.Signal) {
+	signal.Stop(sigc)
+	close(sigc)
+}
